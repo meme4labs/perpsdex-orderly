@@ -25,7 +25,7 @@ window.__RUNTIME_CONFIG__ = {
   "VITE_TWITTER_URL": "https://x.com/sip_trading_",
   "VITE_SEO_SITE_NAME": "sip perps",
   "VITE_SEO_SITE_DESCRIPTION": "AI-powered perpdex trading platform",
-  "VITE_SEO_SITE_URL": "https://dex.orderly.network/perpssip-6809/",
+  "VITE_SEO_SITE_URL": "https://perps.sip.trading",
   "VITE_SEO_SITE_LANGUAGE": "en",
   "VITE_SEO_SITE_LOCALE": "en_US",
   "VITE_SEO_TWITTER_HANDLE": "@sip_trading_",
