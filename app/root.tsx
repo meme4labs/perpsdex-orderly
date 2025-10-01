@@ -4,12 +4,12 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
-import type { MetaFunction } from "@remix-run/node";
-import OrderlyProvider from "@/components/orderlyProvider";
-import "./styles/index.css";
-import { withBasePath } from "./utils/base-path";
-import { getSEOConfig, getPageMeta, getUserLanguage } from "./utils/seo";
+} from '@remix-run/react';
+import type { MetaFunction } from '@remix-run/node';
+import OrderlyProvider from '@/components/orderlyProvider';
+import './styles/index.css';
+import { withBasePath } from './utils/base-path';
+import { getSEOConfig, getPageMeta, getUserLanguage } from './utils/seo';
 
 export const meta: MetaFunction = () => {
   return getPageMeta();
@@ -18,25 +18,31 @@ export const meta: MetaFunction = () => {
 export function Layout({ children }: { children: React.ReactNode }) {
   const seoConfig = getSEOConfig();
   const defaultLanguage = getUserLanguage();
-  
+
   return (
     <html lang={seoConfig.language || defaultLanguage}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/webp" href={withBasePath("/favicon.webp")} />
-        <script dangerouslySetInnerHTML={{
-          __html: `
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href={withBasePath('/favicon.png')}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
             (function() {
               var script = document.createElement('script');
-              script.src = '${withBasePath("/config.js")}';
+              script.src = '${withBasePath('/config.js')}';
               script.onerror = function() {
                 console.log('Runtime config not found, using build-time env vars');
               };
               document.head.appendChild(script);
             })();
-          `
-        }}></script>
+          `,
+          }}
+        ></script>
         <Meta />
         <Links />
       </head>
